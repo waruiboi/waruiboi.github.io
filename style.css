@@ -1,0 +1,419 @@
+/* ===== Japanese-minimal base (Graphpaper / Auralee style) ===== */
+
+:root {
+  --content-width: 760px;   /* the centered column width, shared by nav, main, footer */
+}
+
+html {
+  overscroll-behavior: none;
+  background-color: #ffffff;
+}
+
+body {
+  background-image: url('OceanImageBank_AlexTyrrell_07.jpg');
+  background-size: cover;
+  background-position: center 30%;  /* must match the 30 in charts.js */
+  background-attachment: fixed;
+  color: #1a1a1a;
+  font-family: "Helvetica Neue", -apple-system, "PingFang SC", Arial, sans-serif;
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  line-height: 1.9;
+  margin: 0;
+}
+
+/* Sub-pages (rip, jellyfish, trends, guide) use a different background image */
+body.subpage {
+  background-image: url('OceanImageBank_MattCurnock_seagrass_15.jpg');
+  background-position: center 10%;   /* must match the 10 in parallax.js */
+}
+
+main {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: 0 24px 60px;             /* a little breathing room inside the white column */
+  background-color: #ffffff;        /* white column floating on the ocean */
+}
+
+/* Sub-pages: space at the top of the white area, above the first text */
+.subpage main {
+  padding-top: 40px;
+}
+
+/* ===== Nav — small, quiet, hairline underneath ===== */
+
+nav {
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* spread brand and links to the left and right edges */
+  padding: 18px 50px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e8e8e8;
+  z-index: 10;
+}
+
+.brand {
+  font-size: 13px;
+  letter-spacing: 0.2em;
+}
+
+.nav-links {
+  display: flex;
+  gap: 28px;
+}
+
+nav a {
+  color: #1a1a1a;
+  text-decoration: none;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+}
+
+nav a:hover {
+  opacity: 0.4;            /* minimal sites fade on hover instead of changing color */
+}
+
+/* ===== Hero — the ocean shows through here ===== */
+
+.hero {
+  margin: 0;
+  padding: 38vh 24px;      /* tall empty space where the background is visible */
+}
+
+.hero h1 {
+  color: #ffffff;
+  font-size: 26px;
+  font-weight: 400;        /* minimal sites avoid bold headlines */
+  letter-spacing: 0.25em;
+  text-align: center;
+  margin: 0;
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* ===== Headings ===== */
+
+h2 {
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.25em;
+  margin: 0;
+  padding: 28px 0;
+  cursor: pointer;
+}
+
+h2::after {
+  content: '+';
+  float: right;            /* the + sits at the right edge, like Graphpaper's menus */
+  color: #999999;
+}
+
+h3 {
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  color: #999999;
+  margin-top: 40px;
+}
+
+.lead {
+  font-size: 16px;
+  line-height: 1.9;
+  color: #1a1a1a;
+  border-left: 2px solid #1a1a1a;   /* a quiet accent bar, like a pull-quote */
+  padding-left: 20px;
+  margin: 40px 0;
+}
+
+.analysis {
+  color: #333333;
+  font-size: 13px;
+  line-height: 2;
+  background-color: #f7f7f7;        /* faint panel so analysis reads as commentary */
+  padding: 24px 28px;
+  margin-top: 24px;
+}
+
+.cite {
+  display: inline-block;
+  margin-top: 10px;
+  color: #999999;
+  font-size: 11px;
+  letter-spacing: 0.05em;
+}
+
+.methods {
+  border-top: 1px solid #e8e8e8;
+  padding-top: 20px;
+  color: #777777;
+  font-size: 12px;
+  line-height: 1.9;
+}
+
+.methods strong {
+  color: #1a1a1a;
+  border-bottom: none;             /* override the underlined-strong style here */
+}
+
+.methods ul {
+  padding-left: 18px;
+}
+
+.methods li {
+  margin-bottom: 8px;
+}
+
+p {
+  color: #333333;
+  font-size: 14px;
+}
+
+ol {
+  color: #333333;
+  font-size: 14px;
+  padding-left: 20px;
+}
+
+strong {
+  font-weight: 400;
+  border-bottom: 1px solid #1a1a1a;   /* underline instead of color for emphasis */
+}
+
+/* ===== Title on a sub-page (rip.html, etc.) ===== */
+
+.page-title {
+  font-size: 22px;
+  font-weight: 400;
+  letter-spacing: 0.25em;
+  margin: 80px 0 40px;
+}
+
+/* ===== "Read more" link at the bottom of an open section ===== */
+
+.more-link {
+  display: inline-block;
+  margin-top: 30px;
+  color: #1a1a1a;
+  text-decoration: none;
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  border-bottom: 1px solid #1a1a1a;
+  padding-bottom: 4px;
+}
+
+.more-link:hover {
+  opacity: 0.4;
+}
+
+/* ===== Sections — no cards, just hairlines ===== */
+
+section {
+  border-top: 1px solid #e8e8e8;
+  margin: 0;
+}
+
+section:last-of-type {
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.section-content {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.5s ease;
+}
+
+/* ===== Image slots — space reserved for your photos ===== */
+
+.image-slot {
+  background-color: #f4f4f4;
+  height: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.image-slot span {
+  color: #bbbbbb;
+  font-size: 11px;
+  letter-spacing: 0.3em;
+}
+
+.image-slot img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ===== Stats — plain numbers, no boxes ===== */
+
+.stats {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 60px 0;
+  flex-wrap: wrap;
+}
+
+.stat {
+  text-align: center;
+  flex: 1;
+}
+
+.big-number {
+  display: block;
+  font-size: 28px;
+  font-weight: 300;        /* thin numbers, not heavy */
+  letter-spacing: 0.05em;
+  color: #1a1a1a;
+}
+
+.label {
+  display: block;
+  margin-top: 12px;
+  color: #999999;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+}
+
+/* ===== Chart ===== */
+
+.video {
+  display: block;
+  width: 100%;
+  margin-top: 30px;
+  background-color: #000000;        /* black frame before the video loads */
+}
+
+.chart-box {
+  height: 380px;
+  padding-bottom: 40px;
+}
+
+.chart-note {
+  font-size: 11px;
+  color: #999999;
+  margin-top: 0;
+}
+
+canvas {
+  max-width: 100%;
+}
+
+/* ===== Footer — hairline above, tiny text ===== */
+
+footer {
+  background-color: #ffffff;
+  border-top: 1px solid #e8e8e8;
+  /* spread footer columns across the full width */
+  padding: 50px;
+  margin-top: 140px;                /* transparent gap — the ocean shows through here */
+  color: #999999;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+
+  display: grid;                       /* lay items in a grid */
+  grid-template-columns: repeat(4, 1fr);  /* 4 equal columns per row */
+  gap: 12px 40px;                      /* 12px between rows, 40px between columns */
+  text-align: left;                    /* each item starts at its column's left edge */
+}
+
+footer p {
+  margin: 0;                        /* remove the default stacking space */
+  color: #999999;
+  font-size: 11px;
+}
+
+/* ===== Phone screens (≤640px) ===== */
+@media (max-width: 640px) {
+  nav {
+    flex-direction: column;         /* brand on top, links below */
+    gap: 12px;
+    padding: 14px 20px;
+  }
+
+  .nav-links {
+    gap: 18px;
+    flex-wrap: wrap;                /* links wrap instead of overflowing */
+    justify-content: center;
+  }
+
+  main {
+    padding: 0 20px 40px;
+  }
+
+  .hero {
+    padding: 30vh 20px;
+  }
+
+  .hero h1 {
+    font-size: 18px;
+    letter-spacing: 0.15em;
+  }
+
+  .stats {
+    gap: 10px;                      /* keep all three in one row */
+    padding: 36px 0;
+  }
+
+  .big-number {
+    font-size: 20px;                /* shrink so three fit across a phone */
+  }
+
+  .label {
+    font-size: 10px;
+    letter-spacing: 0.04em;
+  }
+
+  .lead {
+    font-size: 14px;
+  }
+
+  .analysis {
+    padding: 18px 20px;
+  }
+
+  .chart-box {
+    height: 300px;
+  }
+
+  .page-title {
+    margin: 50px 0 30px;
+  }
+
+  .image-slot {
+    height: 220px;
+  }
+
+  footer {
+    grid-template-columns: 1fr;     /* one column — everything stacks */
+    text-align: center;
+    margin-top: 0;                  /* no gap — footer sits right after content */
+    padding: 40px 24px;             /* tighter edges so text fits on a phone */
+  }
+
+}
+
+/* ===== Sub-pages on laptop/monitor: shorter hero, content starts sooner ===== */
+@media (min-width: 641px) {
+  .subpage .hero {
+    padding: 26vh 24px;             /* was 38vh — smaller gap between header and body */
+  }
+}
+
+/* ===== Wide screens (≥1728px) — bigger than a MacBook Air, i.e. external monitors ===== */
+@media (min-width: 1728px) {
+  main {
+    max-width: 1100px;              /* wider content / buttons section */
+  }
+
+  body {
+    font-size: 14px;                /* nudge type up so it doesn't feel tiny */
+  }
+
+  .big-number {
+    font-size: 32px;
+  }
+}

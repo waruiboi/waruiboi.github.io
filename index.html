@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>中国海滩安全</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+  <nav>
+    <span class="brand">中国海滩安全</span>
+    <div class="nav-links">
+      <a href="trends.html">溺水趋势</a>
+      <a href="rip.html">离岸流</a>
+      <a href="jellyfish.html">水母</a>
+      <a href="guide.html">安全指南</a>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <h1>了解海滩危险，学会如何保护自己</h1>
+  </header>
+
+  <main>
+
+    <div class="stats">
+      <div class="stat">
+        <span class="big-number">42,000+</span>
+        <span class="label">中国溺水死亡人数（2023年）</span>
+      </div>
+      <div class="stat">
+        <span class="big-number">三分之ー</span>
+        <span class="label">溺水人数为小孩（2023年）</span>
+      </div>
+      <div class="stat">
+        <span class="big-number">100%</span>
+        <span class="label">溺水事故可以被预防</span>
+      </div>
+    </div>
+
+    <section id="trends">
+      <h2>溺水趋势</h2>
+      <div class="image-slot">
+        <img src="OceanImageBank_KurtArrigo_10.jpg" alt="溺水趋势" /> 
+        
+      </div>
+      <div class="section-content">
+        <div class="chart-box">
+          <canvas id="deathsChart"></canvas>
+        </div>
+        <h3>中国溺水事故趋势</h3>
+        <p>近年来，因为救生员数量和游客安全意识有所提高，中国溺水的死亡数量在逐年下降。</p>
+        <p>虽然溺水事故的数量在近年来有所下降，但仍需引起重视。</p>
+        <a class="more-link" href="trends.html">了解更多 →</a>
+      </div>
+    </section>
+
+    <section id="rip">
+      <h2>离岸流</h2>
+      <div class="image-slot">
+        <!-- 把图片放进项目文件夹，然后把下面一行的 # 换成文件名 -->
+        <img src="OceanImageBank_TobyMatthews_18.jpg" alt="离岸流" />
+        
+      </div>
+      <div class="section-content">
+        <p>离岸流是从海岸向外流动的强劲水流，是海滩溺水的主要原因。</p>
+        <div class="stats">
+          <div class="stat">
+            <span class="big-number">660</span>
+            <span class="label">2010–2019年冲浪区溺水死亡</span>
+          </div>
+          <div class="stat">
+            <span class="big-number">低</span>
+            <span class="label">中国南方海滩游客对离岸流的认知程度</span>
+          </div>
+        </div>
+        <h3>如何逃脱离岸流</h3>
+        <ol>
+          <li>保持冷静，不要与水流对抗</li>
+          <li>沿海岸线平行游泳，脱离水流</li>
+          <li>脱离水流后，再向岸边游回</li>
+          <li>如果精疲力竭，漂浮并呼救</li>
+        </ol>
+        <a class="more-link" href="rip.html">了解更多 →</a>
+      </div>
+    </section>
+
+    <section id="jellyfish">
+      <h2>水母</h2>
+      <div class="image-slot">
+        <img src="OceanImageBank_LewisBurnett_02.jpg" alt="水母" />
+        
+      </div>
+      <div class="section-content">
+        <p>水母蜇伤是中国海滩最常见的海洋生物伤害，占所有海洋生物伤害的60%以上。</p>
+        <div class="stats">
+          <div class="stat">
+            <span class="big-number">60.81%</span>
+            <span class="label">海洋生物伤害中水母蜇伤占比</span>
+          </div>
+          <div class="stat">
+            <span class="big-number">1.5亿</span>
+            <span class="label">全球每年水母蜇伤人数</span>
+          </div>
+        </div>
+        <h3>被水母蜇伤后如何处理</h3>
+        <ol>
+          <li>立即离开水中</li>
+          <li>不要用手直接触摸蜇伤部位</li>
+          <li>用海水冲洗，不要用淡水</li>
+          <li>用卡片刮去残留触须</li>
+          <li>如出现呼吸困难或严重过敏，立即就医</li>
+        </ol>
+        <a class="more-link" href="jellyfish.html">了解更多 →</a>
+      </div>
+    </section>
+
+    <section id="guide">
+      <h2>安全指南</h2>
+      <div class="image-slot">
+        <img src="bouy.png" alt="安全指南" />
+      </div>
+      <div class="section-content">
+        <div class="stats">
+          <div class="stat">
+            <span class="big-number">#120</span>
+            <span class="label">中国紧急求救电话</span>
+          </div>
+          <div class="stat">
+            <span class="big-number">#12395</span>
+            <span class="label">海上救援电话</span>
+          </div>
+      </div>
+        <h3>下水前</h3>
+        <ol>
+          <li>只在有救生员的海滩游泳</li>
+          <li>检查当天的海况和天气预报</li>
+          <li>儿童必须有成人全程陪同</li>
+          <li>告知他人你的游泳计划</li>
+        </ol>
+        <h3>下水时</h3>
+        <ol>
+          <li>不要单独游泳</li>
+          <li>留意旗帜信号—红旗代表危险</li>
+          <li>不要在疲劳或饮酒后游泳</li>
+          <li>注意脚下，避免踩到水母或海胆</li>
+        </ol>
+
+        <a class="more-link" href="guide.html">了解更多 →</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+  <p>数据来源：IHME GBD 2023 · PubMed (Zhu et al., 2023) · 世界卫生组织</p>
+  <p>图片来源：Ocean Image Bank · Unsplash</p>
+  <p>设计与开发：Kai Xiao</p>
+  <p>免责声明：本网站提供的信息仅供参考，不能替代专业医疗建议。请在海滩活动中保持警惕，确保安全。</p>
+  <p>© 2026 中国海滩安全. 保留所有权利.</p>
+  <p>如有任何问题或建议，请联系 <a href="mailto:info@beachsafetychina.com">info@beachsafetychina.com</a></p>
+  <p>本网站的设计和内容受版权保护，未经许可不得复制或转载。请尊重知识产权。</p>
+  <p>我们致力于提供准确和最新的信息，但不保证内容的完整性或准确性。请在使用信息时自行核实。</p>
+  </footer>
+
+  <script src="charts/charts.js"></script>
+  <script src="analytics.js"></script>
+</body>
+</html>

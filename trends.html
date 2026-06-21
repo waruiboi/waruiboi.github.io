@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>溺水趋势 · 中国海滩安全</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body class="subpage">
+
+  <nav>
+    <span class="brand">中国海滩安全</span>
+    <div class="nav-links">
+      <a href="index.html">返回首页</a>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <h1>溺水趋势</h1>
+  </header>
+
+  <main>
+
+    <p> </p>
+    <p class="lead">中国已大幅降低溺水死亡事故，尤其是儿童溺水，但人口老龄化意味着剩余风险正逐渐转向老年人。与此同时，海滩与离岸流仍威胁着年轻人的生命。</p>
+
+    <p>根据全球疾病负担研究（GBD 2023）的数据，中国的溺水死亡人数自1990年以来持续下降，从约15万人降至2023年的约4.3万人。</p>
+
+    <div class="chart-box">
+      <canvas id="trendsChart"></canvas>
+    </div>
+    <p class="chart-note">死亡人数与发生人数对应左侧坐标轴；伤残调整生命年（DALYs，百万）对应右侧坐标轴。</p>
+
+    <p class="analysis">
+      从1990年到2023年，溺水死亡人数下降了约71%（从约15万降至约4.3万），而溺水发生人数（包括获救者）下降了约49%（从约45万降至约23万）。死亡人数下降得更快，说明溺水不仅变得更少见，也变得更容易获救-每例死亡对应的发生人数从1990年的约1:3提高到2023年的约1:5。伤残调整生命年（DALYs）的降幅最大（约81%），表示死亡正逐渐从幼儿向老年人转移，因为每名儿童死亡所损失的健康生命年远高于老年人。
+    </p>
+
+    <h3>下降的原因</h3>
+    <ol>
+      <li>救生员数量和海滩管理水平提高</li>
+      <li>公众安全意识增强</li>
+      <li>急救和医疗响应速度加快</li>
+    </ol>
+
+    <h3>仍需警惕</h3>
+    <p>虽然死亡人数下降，但溺水仍是中国儿童和青少年意外死亡的主要原因之一，老龄化使溺水风险向低防范意识的老年人转移。预防工作不能松懈。</p>
+
+    <h3>全球 · 亚洲 · 中国 溺水死亡人数对比</h3>
+    <div class="chart-box">
+      <canvas id="comparisonChart"></canvas>
+    </div>
+    <p class="chart-note">原始死亡人数（2010–2023）。亚洲为东亚、南亚、东南亚及高收入亚太地区之和（不含中亚）。中国的数字同时包含在亚洲与全球总数之内。</p>
+
+    <p class="analysis">
+      亚洲占全球溺水死亡的一半以上（2023年约56%）。中国约占全球的15%、亚洲的27%。三条曲线都在下降，但中国下降得最快，因此中国在全球中的占比正在缩小，在一个整体溺水严峻的地区里，中国是少见人数下降案例，这表示中国名众的安全意识与海滩管理水平正在显著提高。需要注意：中国的数字同时包含在亚洲与全球之内，且此处的"亚洲"是四个地区之和（不含中亚），并非单一的官方地区。
+    </p>
+
+    <h3>按年龄划分的溺水死亡（全球，2010–2023累计）</h3>
+    <div class="chart-box">
+      <canvas id="ageChart"></canvas>
+    </div>
+    <p class="chart-note">全球溺水死亡人数按年龄段累计（2010–2023）。儿童为0–14岁（受GBD年龄分组限制）。</p>
+
+    <h3>按年龄划分的溺水死亡（中国，2010–2023累计）</h3>
+    <div class="chart-box">
+      <canvas id="ageChartChina"></canvas>
+    </div>
+    <p class="chart-note">与全球相比，中国的儿童占比更低（34% 对 41%），而老年人占比更高（20% 对 11%）——这反映了中国儿童溺水的大幅下降与人口老龄化。</p>
+
+    <p class="analysis">
+      在全球范围内，0–14岁儿童占溺水死亡的41%；而在中国，这一比例为34%，老年人（70岁以上）则占20%（全球为11%）。中国的溺水死亡比全球更偏向老年人。原因有二，且都能在数据中看到：中国的儿童溺水大幅下降（5岁以下死亡从2010年的约1.3万降至2023年的约0.34万），同时人口老龄化使剩余风险向老年人转移。在普及安全教育与海滩游玩时，需关注老年人群体。需注意：此处"儿童"为0–14岁（受GBD年龄分组限制），且饼图为14年累计的分布，并非逐年趋势。
+    </p>
+
+    <h3>数据与方法</h3>
+    <div class="methods">
+      <p><strong>数据来源</strong>：全球疾病负担研究（Global Burden of Disease, GBD 2023），美国华盛顿大学健康指标与评估研究所（IHME）。通过 GBD Results
+        工具导出（vizhub.healthdata.org/gbd-results）。</p>
+      <p><strong>统一查询条件</strong>：死因 = 溺水（Drowning）；指标 = 人数（Number）；性别 = 两性合计；各图的地区、年龄与年份见下。</p>
+      <ul>
+        <li><strong>趋势图</strong>（死亡 / 发生 / DALYs）：地区 = 中国；年龄 = 所有年龄；年份 = 1990–2023。DALYs 数值除以 1,000,000，以"百万"为单位显示。</li>
+        <li><strong>地区对比图</strong>：地区 = 全球、中国，以及"亚洲"；年份 = 2010–2023（受全球数据起始年限制）。"亚洲" = 东亚 + 南亚 + 东南亚 +
+          高收入亚太地区，逐年相加得出（不含中亚），并非 GBD 的单一官方地区。</li>
+        <li><strong>年龄饼图</strong>：地区 = 全球 / 中国；年龄段 = &lt;5、5–14、15–49、50–69、70+；将 2010–2023 各年相加。儿童 = &lt;5 +
+          5–14（即0–14岁）；成年人 = 15–49 + 50–69；老年人 = 70+。</li>
+      </ul>
+      <p><strong>说明与局限</strong>：所有数值为 GBD
+        的点估计（均值），未在图中显示其不确定区间（上下限）。"亚洲"为本项目自行汇总，可能与其他来源的"亚洲"口径不同。中国的数字同时包含在亚洲与全球总数之内，三者并非互相独立的人群。受 GBD
+        年龄分组限制，"儿童"以0–14岁界定，而非0–19岁。</p>
+    </div>
+
+    <a class="more-link" href="index.html">← 返回首页</a>
+
+  </main>
+
+  <footer>
+    <p>数据来源：IHME GBD 2023 · PubMed (Zhu et al., 2023) · 世界卫生组织</p>
+    <p>图片来源：Ocean Image Bank · Unsplash</p>
+    <p>设计与开发：Kai Xiao</p>
+  </footer>
+
+  <script src="charts/trends-chart.js"></script>
+  <script src="charts/parallax.js"></script>
+  <script src="analytics.js"></script>
+</body>
+
+</html>

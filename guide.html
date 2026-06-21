@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>安全指南 · 中国海滩安全</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="subpage">
+
+  <nav>
+    <span class="brand">中国海滩安全</span>
+    <div class="nav-links">
+      <a href="index.html">返回首页</a>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <h1>安全指南</h1>
+  </header>
+
+  <main>
+
+
+    <p>大多数海滩溺水事故是可以预防的。研究表明，仅靠提高安全意识还不够，主动看护和物理防护措施同样重要。</p>
+
+    <h3>溺水往往悄无声息</h3>
+    <p class="analysis">与影视作品中拍水呼救的画面不同，真实的溺水往往安静而迅速。溺水者通常无法呼喊或挥手求救—他们的本能反应是用手臂向下压水以抬起头呼吸。一名儿童可能在约20秒内沉入水中，成年人也往往不足一分钟。这正是"全程近距离看护"如此重要的原因：等到听见呼救，往往已经太迟。<br><span class="cite">来源：世界卫生组织；本能溺水反应（Instinctive Drowning Response, Pia）。</span></p>
+
+    <h3>给家长的建议</h3>
+    <ol>
+      <li>儿童在水中时，成人必须全程近距离看护</li>
+      <li>不要依赖儿童自我约束——即使他们知道规则</li>
+      <li>为儿童配备合格的漂浮装置</li>
+    </ol>
+
+    <p class="analysis">一项针对4,759名中国儿童与青少年的行为研究发现：他们对溺水预防的认知普遍较高，但危险行为依然存在，在男生中尤为明显。换句话说，"知道"并不等于"做到"。这说明仅靠安全教育还不够——主动看护与物理防护（有救生员的海滩、合格的漂浮装置）才是真正降低风险的关键。<br><span class="cite">来源：Frontiers，针对中国儿童与青少年的溺水行为研究。</span></p>
+
+    <h3>预防确实有效：儿童溺水大幅下降</h3>
+    <div class="chart-box">
+      <canvas id="kidsChart"></canvas>
+    </div>
+    <p class="chart-note">中国0–14岁儿童溺水死亡人数（GBD 2023，2010–2023）。</p>
+    <p class="analysis">从2010年到2023年，中国0–14岁儿童的溺水死亡人数从约28,800人降至约10,500人，下降了约64%。这是过去十余年间最显著的进步之一，背后是看护意识的提高、农村水域防护的加强以及救援能力的提升——它有力地说明：预防是有效的。<br><span class="cite">来源：IHME GBD 2023，中国，溺水，按年龄。</span></p>
+
+    <h3>风险正在转移：儿童下降，老年人上升</h3>
+    <div class="chart-box">
+      <canvas id="kidsElderlyChart"></canvas>
+    </div>
+    <p class="chart-note">中国0–14岁与70岁以上溺水死亡人数对比（GBD 2023，2010–2023）。</p>
+    <p class="analysis">在儿童溺水大幅下降的同时，70岁以上老年人的溺水死亡人数却在缓慢上升。两条曲线在近年彼此靠近，意味着溺水风险正从儿童向老年人转移。这与中国人口老龄化的大趋势一致，也提醒我们：海滩安全的看护对象，正在扩展到老年人。<br><span class="cite">来源：IHME GBD 2023，中国，溺水，按年龄。</span></p>
+
+    <h3>选择安全的海滩</h3>
+    <ol>
+      <li>只在有救生员值守的海滩游泳</li>
+      <li>留意并遵守旗帜信号</li>
+      <li>了解当天的海况和潮汐</li>
+    </ol>
+
+    <h3>紧急电话</h3>
+    <ol>
+      <li>急救：<strong>120</strong></li>
+      <li>海上救援：<strong>12395</strong></li>
+    </ol>
+
+    <a class="more-link" href="index.html">← 返回首页</a>
+
+  </main>
+
+  <footer>
+    <p>数据来源：IHME GBD 2023 · PubMed (Zhu et al., 2023) · 世界卫生组织</p>
+    <p>图片来源：Ocean Image Bank · Unsplash</p>
+    <p>设计与开发：Kai Xiao</p>
+  </footer>
+
+  <script src="charts/guide-chart.js"></script>
+  <script src="charts/parallax.js"></script>
+  <script src="analytics.js"></script>
+</body>
+</html>
