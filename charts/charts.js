@@ -39,6 +39,12 @@ const incidenceMeans = years.map(y => {
   return match ? match.mean : null;
 });
 
+// Pick chart labels based on the page language (<html lang="en"> vs zh-CN)
+const isEN = document.documentElement.lang.startsWith('en');
+const L = isEN
+  ? { deaths: 'Drowning deaths', incidence: 'Drowning cases (incidence)' }
+  : { deaths: '溺水死亡人数', incidence: '溺水发生人数' };
+
 // This keeps track of whether we have drawn the chart yet
 let chartDrawn = false;
 
@@ -50,7 +56,7 @@ function drawChart() {
       labels: years,
       datasets: [
         {
-          label: '溺水死亡人数',
+          label: L.deaths,
           data: means,
           borderColor: '#1a1a1a',
           borderWidth: 1.5,
@@ -59,7 +65,7 @@ function drawChart() {
           tension: 0.3
         },
         {
-          label: '溺水发生人数',
+          label: L.incidence,
           data: incidenceMeans,
           borderColor: '#0071e3',
           borderWidth: 1.5,

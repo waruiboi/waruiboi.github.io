@@ -1,3 +1,9 @@
+// Pick chart labels by page language (<html lang="en"> vs zh-CN)
+const isEN = document.documentElement.lang.startsWith('en');
+const G = isEN
+  ? { kids:'Children (0–14)', elderly:'Elderly (70+)', people:'People' }
+  : { kids:'0–14岁儿童', elderly:'70岁以上老年人', people:'人数' };
+
 // China drowning deaths by age, GBD 2023, 2010–2023.
 const guideYears = [
   2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023
@@ -24,7 +30,7 @@ const guideAxes = {
   y: {
     grid: { color: '#f0f0f0' },
     ticks: { color: '#999999', font: { size: 10 } },
-    title: { display: true, text: '人数', color: '#999999', font: { size: 10 } }
+    title: { display: true, text: G.people, color: '#999999', font: { size: 10 } }
   }
 };
 
@@ -34,7 +40,7 @@ new Chart(document.getElementById('kidsChart').getContext('2d'), {
   data: {
     labels: guideYears,
     datasets: [{
-      label: '0–14岁儿童',
+      label: G.kids,
       data: kidsUnder15,
       borderColor: '#0071e3',
       backgroundColor: 'rgba(0, 113, 227, 0.08)',
@@ -61,7 +67,7 @@ new Chart(document.getElementById('kidsElderlyChart').getContext('2d'), {
     labels: guideYears,
     datasets: [
       {
-        label: '0–14岁儿童',
+        label: G.kids,
         data: kidsUnder15,
         borderColor: '#0071e3',
         borderWidth: 1.5,
@@ -69,7 +75,7 @@ new Chart(document.getElementById('kidsElderlyChart').getContext('2d'), {
         tension: 0.3
       },
       {
-        label: '70岁以上老年人',
+        label: G.elderly,
         data: elderly70plus,
         borderColor: '#cc4422',
         borderWidth: 1.5,

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Safety Guide · Beach Safety in China</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛟</text></svg>" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="subpage">
+
+  <nav>
+    <span class="brand">Beach Safety China</span>
+    <div class="nav-links">
+      <a href="index-en.html">Home</a>
+      <a href="guide.html" class="lang-switch">中文</a>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <h1>Safety Guide</h1>
+  </header>
+
+  <main>
+
+    <p>Most beach drownings are preventable. Research shows that raising safety awareness alone is not enough — active supervision and physical safeguards matter just as much.</p>
+
+    <h3>Drowning is often silent</h3>
+    <p class="analysis">Unlike the splashing and shouting shown in films, real drowning is usually quiet and fast. A drowning person typically can't call out or wave for help — their instinct is to press down on the water with their arms to lift their head to breathe. A child can slip under in about 20 seconds, and an adult often in under a minute. This is exactly why "close, constant supervision" matters so much: by the time you hear a cry for help, it is often too late.<br><span class="cite">Sources: World Health Organization; Instinctive Drowning Response (Pia).</span></p>
+
+    <h3>Advice for parents</h3>
+    <ol>
+      <li>When children are in the water, an adult must supervise closely at all times</li>
+      <li>Don't rely on children to control themselves — even if they know the rules</li>
+      <li>Equip children with proper flotation devices</li>
+    </ol>
+
+    <p class="analysis">Although a recent behavioral study of 4,759 Chinese children and adolescents found that their awareness of drowning prevention was generally high, risky behavior still persisted — especially among boys. In other words, "knowing" does not equal "doing." This shows that safety education alone is not enough — active supervision and physical safeguards (lifeguarded beaches, proper flotation devices) are what truly reduce the risk.<br><span class="cite">Source: Frontiers, a behavioral study of Chinese children and adolescents.</span></p>
+
+    <h3>Prevention works: child drownings have fallen sharply</h3>
+    <div class="chart-box">
+      <canvas id="kidsChart"></canvas>
+    </div>
+    <p class="chart-note">Drowning deaths among children aged 0–14 in China (GBD 2023, 2010–2023).</p>
+    <p class="analysis">From 2010 to 2023, drowning deaths among children aged 0–14 in China fell from about 28,800 to about 10,500 — a drop of roughly 64%. This is one of the most striking improvements of the past decade and more, driven by greater supervision, better safeguards around bodies of water, and faster rescue — strong evidence that prevention works.<br><span class="cite">Source: IHME GBD 2023, China, drowning, by age.</span></p>
+
+    <h3>The risk is shifting: children down, older adults up</h3>
+    <div class="chart-box">
+      <canvas id="kidsElderlyChart"></canvas>
+    </div>
+    <p class="chart-note">Drowning deaths in China, ages 0–14 vs 70+ (GBD 2023, 2010–2023).</p>
+    <p class="analysis">As child drownings have fallen sharply, drowning deaths among adults over 70 have slowly risen. In recent years the two lines have moved closer together, meaning drowning risk is shifting from children to older adults. This is consistent with China's broader population aging, and it reminds us that beach-safety supervision now needs to extend to older adults.<br><span class="cite">Source: IHME GBD 2023, China, drowning, by age.</span></p>
+
+    <h3>Choosing a safe beach</h3>
+    <ol>
+      <li>Only swim at beaches with lifeguards on duty</li>
+      <li>Watch and obey the flag signals</li>
+      <li>Know the day's sea conditions and tides</li>
+    </ol>
+
+    <h3>Emergency numbers</h3>
+    <ol>
+      <li>Emergency medical: <strong>120</strong></li>
+      <li>Maritime rescue: <strong>12395</strong></li>
+    </ol>
+
+    <a class="more-link" href="index-en.html">← Home</a>
+
+  </main>
+
+  <footer>
+    <p>Data sources: IHME GBD 2023 · PubMed (Zhu et al., 2023) · World Health Organization</p>
+    <p>Image sources: Ocean Image Bank · Unsplash</p>
+    <p>Design &amp; development: Kai Xiao</p>
+  </footer>
+
+  <script src="charts/guide-chart.js"></script>
+  <script src="charts/parallax.js"></script>
+  <script src="analytics.js"></script>
+</body>
+</html>

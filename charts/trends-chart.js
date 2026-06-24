@@ -1,3 +1,13 @@
+// Pick chart labels by page language (<html lang="en"> vs zh-CN)
+const isEN = document.documentElement.lang.startsWith('en');
+const T = isEN
+  ? { deaths:'Drowning deaths', incidence:'Drowning cases', dalys:'DALYs (millions)',
+      people:'People', global:'Global', asia:'Asia', china:'China',
+      ages:['Children (0–14)','Adults (15–69)','Elderly (70+)'] }
+  : { deaths:'溺水死亡人数', incidence:'溺水发生人数', dalys:'DALYs（百万）',
+      people:'人数', global:'全球', asia:'亚洲', china:'中国',
+      ages:['儿童（0–14岁）','成年人（15–69岁）','老年人（70岁以上）'] };
+
 // All three measures from GBD 2023, China, all ages, both sexes, 1990–2023.
 const years = [
   1990,1991,1992,1993,1994,1995,1996,1997,1998,1999,2000,2001,2002,2003,
@@ -35,7 +45,7 @@ new Chart(ctx, {
     labels: years,
     datasets: [
       {
-        label: '溺水死亡人数',
+        label: T.deaths,
         data: deaths,
         borderColor: '#ff0000',
         borderWidth: 1.5,
@@ -44,7 +54,7 @@ new Chart(ctx, {
         yAxisID: 'y'           // left axis
       },
       {
-        label: '溺水发生人数',
+        label: T.incidence,
         data: incidence,
         borderColor: '#202020',
         borderWidth: 1.5,
@@ -53,7 +63,7 @@ new Chart(ctx, {
         yAxisID: 'y'           // left axis
       },
       {
-        label: 'DALYs（百万）',
+        label: T.dalys,
         data: dalys,
         borderColor: '#ff9900',
         borderWidth: 1.5,
@@ -82,13 +92,13 @@ new Chart(ctx, {
         position: 'left',
         grid: { color: '#f0f0f0' },
         ticks: { color: '#999999', font: { size: 10 } },
-        title: { display: true, text: '人数', color: '#999999', font: { size: 10 } }
+        title: { display: true, text: T.people, color: '#999999', font: { size: 10 } }
       },
       y1: {                    // right axis — DALYs in millions
         position: 'right',
         grid: { drawOnChartArea: false },   // don't double up the gridlines
         ticks: { color: '#ff9900', font: { size: 10 } },
-        title: { display: true, text: 'DALYs（百万）', color: '#ff9900', font: { size: 10 } }
+        title: { display: true, text: T.dalys, color: '#ff9900', font: { size: 10 } }
       }
     }
   }
@@ -126,7 +136,7 @@ new Chart(ctx2, {
     labels: compYears,
     datasets: [
       {
-        label: '全球',
+        label: T.global,
         data: globalDeaths,
         borderColor: '#202020',
         borderWidth: 1.5,
@@ -134,7 +144,7 @@ new Chart(ctx2, {
         tension: 0.3
       },
       {
-        label: '亚洲',
+        label: T.asia,
         data: asiaDeaths,
         borderColor: '#00adb3',
         borderWidth: 1.5,
@@ -142,7 +152,7 @@ new Chart(ctx2, {
         tension: 0.3
       },
       {
-        label: '中国',
+        label: T.china,
         data: chinaDeaths,
         borderColor: '#cc0000',
         borderWidth: 1.5,
@@ -168,7 +178,7 @@ new Chart(ctx2, {
       y: {
         grid: { color: '#f0f0f0' },
         ticks: { color: '#999999', font: { size: 10 } },
-        title: { display: true, text: '人数', color: '#999999', font: { size: 10 } }
+        title: { display: true, text: T.people, color: '#999999', font: { size: 10 } }
       }
     }
   }
@@ -177,7 +187,7 @@ new Chart(ctx2, {
 
 // ===== Third chart: drowning deaths by age group (Global, 2010–2023 total) =====
 // Each value is the sum of that GBD age bucket across all years 2010–2023.
-const ageLabels = ['儿童（0–14岁）', '成年人（15–69岁）', '老年人（70岁以上）'];
+const ageLabels = T.ages;
 const ageDeaths = [1790874, 2118378, 482605];
 
 const ageTotal = ageDeaths.reduce((sum, v) => sum + v, 0);
@@ -209,7 +219,7 @@ new Chart(ctx3, {
           label: function(item) {
             const value = item.parsed;
             const percent = ((value / ageTotal) * 100).toFixed(1);
-            return ' ' + value.toLocaleString() + ' 人（' + percent + '%）';
+            return ' ' + value.toLocaleString() + (isEN ? ' (' + percent + '%)' : ' 人（' + percent + '%）');
           }
         }
       }
@@ -248,7 +258,7 @@ new Chart(ctx4, {
           label: function(item) {
             const value = item.parsed;
             const percent = ((value / ageTotalChina) * 100).toFixed(1);
-            return ' ' + value.toLocaleString() + ' 人（' + percent + '%）';
+            return ' ' + value.toLocaleString() + (isEN ? ' (' + percent + '%)' : ' 人（' + percent + '%）');
           }
         }
       }

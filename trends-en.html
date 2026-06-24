@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Drowning Trends · Beach Safety in China</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛟</text></svg>" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body class="subpage">
+
+  <nav>
+    <span class="brand">Beach Safety China</span>
+    <div class="nav-links">
+      <a href="index-en.html">Home</a>
+      <a href="trends.html" class="lang-switch">中文</a>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <h1>Drowning Trends</h1>
+  </header>
+
+  <main>
+
+    <p class="lead">China has dramatically reduced drowning deaths, especially among children — but an aging population means the remaining risk is gradually shifting toward older adults. At the same time, beaches and rip currents still threaten young people's lives.</p>
+
+    <p>According to the Global Burden of Disease study (GBD 2023), drowning deaths in China have fallen steadily since 1990, from about 150,000 to roughly 43,000 in 2023.</p>
+
+    <div class="chart-box">
+      <canvas id="trendsChart"></canvas>
+    </div>
+    <p class="chart-note">Deaths and cases use the left axis; disability-adjusted life years (DALYs, millions) use the right axis.</p>
+
+    <p class="analysis">
+      From 1990 to 2023, drowning deaths fell by about 71% (from ~150,000 to ~43,000), while drowning cases (including survivors) fell by about 49% (from ~450,000 to ~230,000). Deaths fell faster, meaning drowning became not only less common but also more survivable — the cases-per-death ratio improved from about 3:1 in 1990 to about 5:1 in 2023. DALYs fell the most (about 81%), showing that deaths are gradually shifting from young children to older adults, since each child's death represents far more lost healthy years of life.
+    </p>
+
+    <h3>Why the decline</h3>
+    <ol>
+      <li>More lifeguards and better beach management</li>
+      <li>Greater public safety awareness</li>
+      <li>Faster first-aid and medical response</li>
+    </ol>
+
+    <h3>Still cause for caution</h3>
+    <p>Although deaths have fallen, drowning remains one of the leading causes of accidental death among Chinese children and teenagers, and an aging population is shifting the risk toward older adults who are less prepared. Prevention efforts must not let up.</p>
+
+    <h3>Global · Asia · China drowning deaths compared</h3>
+    <div class="chart-box">
+      <canvas id="comparisonChart"></canvas>
+    </div>
+    <p class="chart-note">Raw death counts (2010–2023). "Asia" is the sum of East Asia, South Asia, Southeast Asia, and High-income Asia Pacific (excluding Central Asia). China's figures are included within both the Asia and global totals.</p>
+
+    <p class="analysis">
+      Asia accounts for more than half of the world's drowning deaths (about 56% in 2023). China is roughly 15% of the global total and 27% of Asia's. All three lines are falling, but China is falling the fastest, so China's share of the global total is shrinking — a rare success story in a region where drowning is still severe, reflecting markedly improving safety awareness and beach management in China. Note: China's figures are counted within both the Asia and global totals, and "Asia" here is a sum of four regions (excluding Central Asia), not a single official region.
+    </p>
+
+    <h3>Drowning deaths by age (Global, 2010–2023 cumulative)</h3>
+    <div class="chart-box">
+      <canvas id="ageChart"></canvas>
+    </div>
+    <p class="chart-note">Global drowning deaths summed by age group (2010–2023). "Children" means ages 0–14 (limited by GBD's age brackets).</p>
+
+    <h3>Drowning deaths by age (China, 2010–2023 cumulative)</h3>
+    <div class="chart-box">
+      <canvas id="ageChartChina"></canvas>
+    </div>
+    <p class="chart-note">Compared with the world, China has a lower share of children (34% vs 41%) and a higher share of older adults (20% vs 11%) — reflecting the sharp drop in child drownings and an aging population.</p>
+
+    <p class="analysis">
+      Worldwide, children aged 0–14 make up 41% of drowning deaths; in China the figure is 34%, while older adults (70+) make up 20% (versus 11% globally). China's drowning deaths skew older than the world's. There are two reasons, both visible in the data: child drownings in China have fallen sharply (under-5 deaths dropped from about 13,000 in 2010 to about 3,400 in 2023), while an aging population shifts the remaining risk toward older adults. Safety education and beach supervision should keep older adults in mind. Note: "children" here means ages 0–14 (limited by GBD's age brackets), and the doughnut shows a 14-year cumulative distribution, not a year-by-year trend.
+    </p>
+
+    <h3>Data &amp; Methods</h3>
+    <div class="methods">
+      <p><strong>Data source</strong>: Global Burden of Disease study (GBD 2023), Institute for Health Metrics and Evaluation (IHME), University of Washington. Exported via the GBD Results tool (vizhub.healthdata.org/gbd-results).</p>
+      <p><strong>Shared query settings</strong>: Cause = Drowning; Metric = Number; Sex = both sexes combined. Location, age, and years for each chart are listed below.</p>
+      <ul>
+        <li><strong>Trend chart</strong> (deaths / cases / DALYs): Location = China; Age = all ages; Years = 1990–2023. DALYs values are divided by 1,000,000 to display in millions.</li>
+        <li><strong>Regional comparison chart</strong>: Locations = Global, China, and "Asia"; Years = 2010–2023 (limited by the global data's start year). "Asia" = East Asia + South Asia + Southeast Asia + High-income Asia Pacific, summed year by year (excluding Central Asia); it is not a single official GBD region.</li>
+        <li><strong>Age doughnuts</strong>: Locations = Global / China; age groups = &lt;5, 5–14, 15–49, 50–69, 70+; summed across 2010–2023. Children = &lt;5 + 5–14 (i.e. 0–14); Adults = 15–49 + 50–69; Elderly = 70+.</li>
+      </ul>
+      <p><strong>Notes &amp; limitations</strong>: All values are GBD point estimates (means); uncertainty intervals (upper/lower bounds) are not shown on the charts. "Asia" is aggregated by this project and may differ from other sources' definitions of "Asia." China's figures are included within both the Asia and global totals, so the three are not mutually independent populations. Due to GBD's age brackets, "children" is defined as 0–14, not 0–19.</p>
+    </div>
+
+    <a class="more-link" href="index-en.html">← Home</a>
+
+  </main>
+
+  <footer>
+    <p>Data sources: IHME GBD 2023 · PubMed (Zhu et al., 2023) · World Health Organization</p>
+    <p>Image sources: Ocean Image Bank · Unsplash</p>
+    <p>Design &amp; development: Kai Xiao</p>
+  </footer>
+
+  <script src="charts/trends-chart.js"></script>
+  <script src="charts/parallax.js"></script>
+  <script src="analytics.js"></script>
+</body>
+
+</html>

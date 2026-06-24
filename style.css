@@ -87,6 +87,12 @@ nav a:hover {
   opacity: 0.4;            /* minimal sites fade on hover instead of changing color */
 }
 
+.lang-switch {
+  border: 1px solid #1a1a1a;
+  padding: 3px 9px;
+  letter-spacing: 0.15em;
+}
+
 /* ===== Hero — the ocean shows through here ===== */
 
 .hero {
